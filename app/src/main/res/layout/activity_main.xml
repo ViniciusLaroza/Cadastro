@@ -75,43 +75,39 @@
             app:layout_constraintEnd_toEndOf="@id/TextEmail"/>
 
 
-        <LinearLayout
-            android:id="@+id/linear"
+        <RadioGroup
+            android:id="@+id/radioB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/checkbox">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="6">
+                android:layout_weight="1"
+                android:text="Masculino" />
 
-                <RadioButton
-                    android:id="@+id/rb_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Masculino" />
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Feminino" />
+        </RadioGroup>
 
-                <RadioButton
-                    android:id="@+id/rb_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Feminino" />
-            </LinearLayout>
-        </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cidadeText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            app:layout_constraintEnd_toEndOf="@id/linear"
-            app:layout_constraintStart_toStartOf="@id/linear"
-            app:layout_constraintTop_toBottomOf="@id/linear"
+            app:layout_constraintEnd_toEndOf="@id/radioB"
+            app:layout_constraintStart_toStartOf="@id/radioB"
+            app:layout_constraintTop_toBottomOf="@id/radioB"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/cidade"
@@ -122,24 +118,41 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ufText"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/ufText"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="UF"-->
+<!--            android:layout_margin="8dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/cidadeText"-->
+<!--            app:layout_constraintStart_toStartOf="@id/cidadeText"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/cidadeText">-->
+
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/uf"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="none"-->
+<!--                />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <LinearLayout
+            android:id="@+id/uf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="UF"
+            android:orientation="vertical"
             android:layout_margin="8dp"
             app:layout_constraintEnd_toEndOf="@id/cidadeText"
             app:layout_constraintStart_toStartOf="@id/cidadeText"
             app:layout_constraintTop_toBottomOf="@id/cidadeText">
 
-            <AutoCompleteTextView
-                android:id="@+id/uf"
+            <Spinner
+                android:id="@+id/spinnerUF"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/botao_salvar"
@@ -148,7 +161,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ufText">
+            app:layout_constraintTop_toBottomOf="@id/uf">
 
             <LinearLayout
                 android:layout_width="match_parent"

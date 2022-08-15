@@ -74,6 +74,7 @@ public class formularioCadastro {
         return "formularioCadastro{" +
                 "nomeCompleto='" + nomeCompleto + '\'' +
                 ", telefone='" + telefone + '\'' +
+                ", Email=" + email +
                 ", ingressarEmail=" + ingressarEmail +
                 ", sexo='" + sexo + '\'' +
                 ", cidade='" + cidade + '\'' +
